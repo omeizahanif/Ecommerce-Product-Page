@@ -5,40 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | E-commerce product page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+  <haeder>
+    <div>
+      hamburger-svg
+      logo-svg
+    </div>
+    <nav>
+      cancel-svg
+      <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <div id="cart">
+        cart-svg
+        <div class="cart-block">
+          <p>Cart</p>
+          <div id="list" class="cart-items"></div>
+        </div>
+      </div>
+      avatar-svg
+    </div>
+  </header>
 
-  Sneaker Company
+  <main>
+    <section class="product-gallery">
 
-  Fall Limited Edition Sneakers
+    </section>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+    <section class="product-content">
+      <h4 class="product-company">Sneaker Company</h4>
+      <h2 class="product-title">Fall Limited Edition Sneakers</h2>
+      <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      <div class="product-price">
+        <p class="new-price">$125.00 <span class="discount-percent">50%</span></p>
+        <p class="old-price">$250.00</p>
+      </div>
 
-  $125.00
-  50%
-  $250.00
+      <div id="counter">
+        <div>
+          - svg
+          <span>0</span>
+          + svg
+        </div>
+        <button>cart-svg Add to cart</button>
+      </div>
+    </section>
+  </main>
 
-  0
-  Add to cart
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
