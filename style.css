@@ -16,15 +16,18 @@
 }
 
 body {
-    padding: 1rem;
+    margin: 0;
     font-family: 'Kumbh Sans', sans-serif;
+}
+
+.container {
+    padding: 1rem;
 }
 
 header {
     display: flex;
-    border: 1px solid green;
     justify-content: space-between;
-    position: relative;
+    position: relative;   
 }
 
 .logo {
@@ -32,15 +35,15 @@ header {
     align-items: center;
     justify-content: space-between;
     order: -1;
-    border: 1px solid red;
-    width: 42%;
+    width: 11em;
 }
 
 nav {
     display: none;
     order: -2;
-    border: 1px solid aqua;
     position: absolute;
+    top: 0;
+    left: 0;
     min-height: 90vh;
     background-color: #fff;
     padding: 1rem;
@@ -49,6 +52,11 @@ nav {
 
 svg#hamburger {
     display: block;
+}
+
+svg#hamburger:hover,
+nav svg {
+    cursor: pointer;
 }
 
 nav ul {
@@ -65,12 +73,26 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover,
+nav ul li a:focus {
+    border-bottom: 2px solid var(--orange);
+}
+
 .cart-block {
     display: flex;
-    border: 1px blueviolet solid;
     align-items: center;
     justify-content: space-between;
     width: 5em;
+}
+
+.cart-block img {
+    width: 30px;
+    height: 30px;
+}
+
+.cart-block img:hover {
+    border: 2px solid var(--orange);
+    border-radius: 50px;
 }
 
 .cart-info {
@@ -95,6 +117,10 @@ nav ul li a {
         margin: 0 auto;
     }
 
+    header {
+        border-bottom: 1px solid var(--grayish-blue);
+    }
+
     svg#hamburger {
         display: none;
     }
@@ -106,12 +132,13 @@ nav ul li a {
 
     nav {
         width: 65%;
-        border: 1px solid red;
+
         order: unset;
         position: unset;
         min-height: unset;
         background-color: #fff;
         padding: unset;
+        display: block !important;
     }
 
     nav svg {
@@ -125,14 +152,18 @@ nav ul li a {
     }
 
     nav ul li {
-        margin-right: 1em;
-        border: 1px solid yellow;
+        margin: 0 1.5em 0 0;
+        height: inherit;
         font-size: .8rem;
     }
 
     nav ul li a {
         color: var(--dark-grayish-blue);
+        padding: 2em 0;
+        display: inline-block;
     }
+
+    
 
     
     
