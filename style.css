@@ -20,25 +20,57 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+header {
+    display: flex;
+    border: 1px solid green;
+    justify-content: space-between;
+    position: relative;
+}
+
 .logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    order: -1;
+    border: 1px solid red;
+    width: 42%;
+}
+
+nav {
+    display: none;
+    order: -2;
+    border: 1px solid aqua;
+    position: absolute;
+    min-height: 90vh;
+    background-color: #fff;
+    padding: 1rem;
+    width: 70%;
 }
 
 svg#hamburger {
     display: block;
 }
 
-nav svg {
-    display: none;
+nav ul {
+    padding: 0;
+    margin: 2em 0;
 }
 
 nav ul li {
     list-style: none;
+    margin: 2em 0;
 }
 nav ul li a {
-    color: var(--dark-grayish-blue);
+    color: var(--vdark-blue);
     text-decoration: none;
+}
+
+.cart-block {
+    display: flex;
+    border: 1px blueviolet solid;
+    align-items: center;
+    justify-content: space-between;
+    width: 5em;
 }
 
 .cart-info {
@@ -56,6 +88,7 @@ nav ul li a {
 }
 
 
+
 @media only screen and (min-width: 700px) {
     .container {
         max-width: 50em;
@@ -66,20 +99,29 @@ nav ul li a {
         display: none;
     }
 
-    header {
-        display: flex;
-        border: 1px solid green;
-        justify-content: space-between;
+    .logo {
+        order: unset;
+        width: unset;
     }
 
     nav {
         width: 65%;
         border: 1px solid red;
+        order: unset;
+        position: unset;
+        min-height: unset;
+        background-color: #fff;
+        padding: unset;
+    }
+
+    nav svg {
+        display: none;
     }
 
     nav ul {
         display: flex;
         padding: 0 0 0 2em;
+        margin: unset;
     }
 
     nav ul li {
@@ -88,13 +130,11 @@ nav ul li a {
         font-size: .8rem;
     }
 
-    .cart-block {
-        display: flex;
-        border: 1px blueviolet solid;
-        align-items: center;
-        justify-content: space-between;
-        width: 5em;
+    nav ul li a {
+        color: var(--dark-grayish-blue);
     }
+
+    
     
 }
 
