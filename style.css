@@ -48,6 +48,7 @@ nav {
     background-color: #fff;
     padding: 1rem;
     width: 70%;
+    z-index: 1;
 }
 
 svg#hamburger {
@@ -109,7 +110,40 @@ nav ul li a:focus {
     color: var(--dark-grayish-blue);
 }
 
+.product-gallery {
+    position: relative;
+}
 
+.slides {
+    display: none;
+}
+
+.slides img {
+    max-width: 100%;
+}
+
+.active {
+    display: block;
+    
+}
+
+.prev, 
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: -1.2em 0 0 .8em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next {
+    right: .8em;
+}
 
 @media only screen and (min-width: 700px) {
     .container {
