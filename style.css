@@ -242,7 +242,7 @@ button svg {
         max-width: 80%;
         display: flex;
         justify-content: space-between;
-        border: 1px solid red;
+
         margin: 5em auto;
     }
 
@@ -287,12 +287,6 @@ button svg {
         display: inline-block;
     }
 
-    .product-gallery,
-    .product-content {
-        border: 1px solid green;
-        
-    }
-
     .product-gallery {
         max-width: 43%;
     }
@@ -318,6 +312,13 @@ button svg {
 
     .slide-navigation img {
         max-width: 20%;
+    }
+
+    .active,
+    .slide-navigation img:hover,
+    .slide-navigation img:focus {
+        opacity: 0.5;
+        border: 3px solid var(--orange);
     }
     
 }
