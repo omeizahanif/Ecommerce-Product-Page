@@ -20,14 +20,15 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-.container {
-    padding: 1rem;
+main {
+    padding: 1rem 0;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    position: relative;   
+    position: relative;
+    padding: 1rem;
 }
 
 .logo {
@@ -104,10 +105,20 @@ nav ul li a:focus {
     color: var(--orange);
     text-transform: uppercase;
     font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: 2px;
+}
+
+.product-title {
+    max-width: 80%;
+    font-size: 2rem;
+    margin: 0;
 }
 
 .product-description {
     color: var(--dark-grayish-blue);
+    line-height: 1.7;
+    max-width: 95%;
 }
 
 .product-gallery {
@@ -120,11 +131,6 @@ nav ul li a:focus {
 
 .slides img {
     max-width: 100%;
-}
-
-.active {
-    display: block;
-    
 }
 
 .prev, 
@@ -145,14 +151,60 @@ nav ul li a:focus {
     right: .8em;
 }
 
+.slide-navigation {
+    display: none;
+}
+
+.product-content {
+    padding: 0 1.5rem;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.new-price {
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    width: 50%;
+}
+
+.old-price {
+    color: var(--dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+.discount-percent {
+    font-size: 1rem;
+    display: inline-block;
+    color: var(--orange);
+    background-color: rgb(247, 228, 193);
+    margin-left: 1rem;
+    align-self: center;
+    padding: .2em .3em;
+    border-radius: 5px;
+}
+
 @media only screen and (min-width: 700px) {
     .container {
-        max-width: 50em;
-        margin: 0 auto;
+        padding: 0;
     }
 
     header {
         border-bottom: 1px solid var(--grayish-blue);
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    main {
+        max-width: 80%;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid red;
+        margin: 5em auto;
     }
 
     svg#hamburger {
@@ -166,7 +218,6 @@ nav ul li a:focus {
 
     nav {
         width: 65%;
-
         order: unset;
         position: unset;
         min-height: unset;
@@ -193,13 +244,42 @@ nav ul li a:focus {
 
     nav ul li a {
         color: var(--dark-grayish-blue);
-        padding: 2em 0;
+        padding: 3em 0;
         display: inline-block;
     }
 
-    
+    .product-gallery,
+    .product-content {
+        border: 1px solid green;
+        
+    }
 
+    .product-gallery {
+        max-width: 43%;
+    }
+
+    .product-content {
+        max-width: 46%;
+    }
+
+
+    .prev, .next {
+        display: none;
+    }
     
+    .slides img, .slide-navigation img {
+        border-radius: 10px;
+    }
+
+    .slide-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0;
+    }
+
+    .slide-navigation img {
+        max-width: 20%;
+    }
     
 }
 
