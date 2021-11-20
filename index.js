@@ -5,6 +5,7 @@ const body = document.querySelector("body");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const slides = document.querySelectorAll(".slides");
+const slideNavigation = document.querySelectorAll(".slide-navigation img");
 let slideIndex = 1;
 
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -26,6 +27,10 @@ function changeSlide(i) {
     return showSlide(slideIndex += i);
 }
 
+function currentSlide(i) {
+    return showSlide(slideIndex = i);
+}
+
 function showSlide(n) {
     //prevent function from calling past slides length
     if(n > slides.length) slideIndex = 1;
@@ -33,7 +38,9 @@ function showSlide(n) {
     //hide all slides
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
+        slideNavigation[i].classList.remove("active");
     }
     //display only selected slide
     slides[slideIndex - 1].style.display = "block";
+    slideNavigation[slideIndex - 1].classList.add("active");
 }
