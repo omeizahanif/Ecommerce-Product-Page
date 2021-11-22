@@ -18,10 +18,15 @@
 body {
     margin: 0;
     font-family: 'Kumbh Sans', sans-serif;
+   
 }
 
 main {
     padding: 1rem 0;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 header {
@@ -135,7 +140,6 @@ nav ul li a:focus {
 
 .prev, 
 .next {
-    cursor: pointer;
     position: absolute;
     top: 50%;
     background-color: #fff;
@@ -197,10 +201,6 @@ nav ul li a:focus {
     border-radius: 10px;
 }
 
-.control svg:hover {
-    cursor: pointer;
-}
-
 button {
     padding: 1rem 1.2rem;
     width: 100%;
@@ -218,9 +218,6 @@ button {
     box-shadow: 0px 35px 35px -23px rgba(255,125,26,1);
 }
 
-button:hover {
-    cursor: pointer;
-}
 
 button svg {
     fill: white;
@@ -296,22 +293,25 @@ button svg {
     }
 
 
-    .prev, .next {
-        display: none;
-    }
-    
-    .slides img, .slide-navigation img {
+    .slides img, 
+    .slide-navigation img,
+    .lightbox-slides img,
+    .lightbox-navigation img {
         border-radius: 10px;
     }
 
     .slide-navigation {
-        display: flex;
-        justify-content: space-between;
         margin: 1em 0;
+        max-width: 27em;
     }
 
-    .slide-navigation img {
+    .slide-navigation img,
+    .lightbox-navigation img {
         max-width: 20%;
+    }
+
+    .prev, .next {
+        display: none;
     }
 
     .active,
@@ -320,6 +320,74 @@ button svg {
         opacity: 0.5;
         border: 3px solid var(--orange);
     }
+
+    .slide-navigation,
+    .lightbox-navigation {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .lightbox-navigation {
+        margin: 1em auto;
+        max-width: 25em;
+    }
+
+    .product-lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 4em;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: var(--lightbox-black);
+        opacity: 85%;
+    }
+
+    .close {
+        position: absolute;
+        top: 30px;
+        right: 410px;
+    }
+
+    .lightbox-container  {
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 25em;
+        border-radius: 10px;
+    }
+
+    .lightbox-slides img {
+        max-width: 100%;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        position: absolute;
+        top: 50%;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: -1.2em 0 0 .8em;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lightbox-prev {
+        left: -9%;
+    }
+
+    .lightbox-next {
+        right: -6%;
+    }
+
+    /*lightbox*/
+    
     
 }
 
