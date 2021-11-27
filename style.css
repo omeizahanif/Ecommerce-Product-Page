@@ -124,6 +124,9 @@ nav ul li a:focus {
 .cart-items {
     border-top: 1px solid var(--grayish-blue);
     padding: 1rem;
+}
+
+.cart-items article {
     display: flex;
     justify-content: space-between;
 }
@@ -236,8 +239,12 @@ nav ul li a:focus {
     max-width: 20%;
 }
 
+
+.slide-navigation img:hover {
+    opacity: 0.5;
+}
+
 .active,
-.slide-navigation img:hover,
 .slide-navigation img:focus {
     opacity: 0.5;
     border: 3px solid var(--orange);
@@ -352,6 +359,10 @@ nav ul li a:focus {
     border-radius: 10px;
 }
 
+.control svg:hover {
+    opacity: 0.5;
+}
+
 button {
     padding: 1rem 1.2rem;
     width: 100%;
@@ -364,9 +375,14 @@ button {
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    -webkit-box-shadow: 0px 35px 35px -23px rgba(255,125,26,1);
-    -moz-box-shadow: 0px 35px 35px -23px rgba(255,125,26,1);
-    box-shadow: 0px 35px 35px -23px rgba(255,125,26,1);
+   
+}
+
+button:hover {
+    opacity: 0.7;
+    -webkit-box-shadow: -2px 35px 59px -20px rgba(255,125,26,1);
+-moz-box-shadow: -2px 35px 59px -20px rgba(255,125,26,1);
+box-shadow: -2px 35px 59px -20px rgba(255,125,26,1);
 }
 
 
@@ -446,7 +462,6 @@ button svg {
 
     .product-content {
         max-width: 48%;
-        border: 1px solid red;
     }
 
     .slides img {
