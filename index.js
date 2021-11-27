@@ -9,6 +9,7 @@ const lightboxSlides = document.querySelectorAll(".lightbox-slides");
 const slideNavigation = document.querySelectorAll(".slide-navigation img");
 const lightboxNavigation = document.querySelectorAll(".lightbox-navigation img");
 const priceTag = document.getElementById("tag");
+
 const addButton = document.getElementById("addButton");
 const decrease = document.getElementById("decrease");
 const increase = document.getElementById("increase");
@@ -48,8 +49,9 @@ decrease.addEventListener("click", function(e) {
 })
 
 addButton.addEventListener("click", function(e) {
-    const updatedModel = update("addToCart", cartModel);
-    view(updatedModel);
+    const updatedModel = update(addToCartMsg, cartModel);
+    return view(updatedModel);
+    
 });
 
 function changeSlide(i) {
@@ -121,7 +123,7 @@ function update(msg, model) {
         case "subtract":
             return model.counter -= 1;
         case "addToCart":
-            const price = parseFloat(priceTag.value.slice(1)).toFixed(2);
+            const price = parseFloat(priceTag.textContent.slice(1)).toFixed(2);
             const total = price * model.counter;
             const product = {
                 productName: "Autumn Limited Edition",
@@ -135,8 +137,10 @@ function update(msg, model) {
             return { ...model, cart, isEmpty: false};
         case "delete":
             const { id } = msg;
+            let { isEmpty } = model;
             const updatedCart = model.cart.filter(item => item.id !== id);
-            const isEmpty = updatedCart.length > 0 ? false : true;
+            isEmpty = updatedCart.length > 0 ? false : true;
+            console.log({ ...model, cart: [...updatedCart], isEmpty});
             return { ...model, updatedCart, isEmpty};
         default:
             return model.counter;
@@ -146,7 +150,7 @@ function update(msg, model) {
 function cartView(model) {
     let listArray = [];
 
-    if (model.cart) {
+    if (model.cart.length) {
         listArray = model.cart.map(function(item) {
             return `<article data.id=${item.id}>
                 <img src="/images/image-product-1.jpg">
@@ -155,19 +159,23 @@ function cartView(model) {
                     <span class="item-price">$${item.price} x ${item.quantity}</span>
                     <span class="cart-total">$${item.total}</span>
                 </div>
-                <svg onclick="update(deleteMsg(item.id), cartModel)" width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a"/></defs><use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a"/></svg>
+                <svg onclick="update(deleteMsg(${item.id}), cartModel);view(cartModel)" width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a"/></defs><use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a"/></svg>
                 </article>`
         });
 
         return listArray;
     }
+
+    return emptyCart;
     
 }
 
 function checkEmptyCart(model) {
     if (model.isEmpty) {
+        console.log("empty");
         checkout.style.display = "none";
     } else {
+        console.log("not empty")
         checkout.style.display = "block";
     }
 }
@@ -175,5 +183,5 @@ function checkEmptyCart(model) {
 function view(model) {
     count.innerText = model.counter;
     checkEmptyCart(model);
-    list.innerHTML = cartView(model) || emptyCart;
+    list.innerHTML = cartView(model);
 }
