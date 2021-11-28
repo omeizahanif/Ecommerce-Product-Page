@@ -31,7 +31,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 menu.addEventListener("click", function(e) {
         nav.style.display = "block";
-        document.body.style.backgroundColor = "hsl(0, 0%, 0%, 0.5)";
 });
 
 closeNav.addEventListener("click", function(e) {

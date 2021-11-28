@@ -12,7 +12,7 @@
     --grayish-blue: hsl(220, 14%, 75%);
     --light-grayish-blue: hsl(223, 64%, 98%);
     --white: hsl(0, 0%, 100%);
-    --lightbox-black: hsl(0, 0%, 0%); /*75% opacity*/
+    --lightbox-black: hsl(0, 0%, 0%, 0.75); /*75% opacity*/
 }
 
 body {
@@ -50,8 +50,8 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 90vh;
-    background-color: #fff;
+    min-height: 180vh;
+    background-color: var(--white);
     padding: 1rem;
     width: 70%;
     z-index: 1;
@@ -69,6 +69,9 @@ nav svg {
 nav ul {
     padding: 0;
     margin: 2em 0;
+    background-color: #fff;
+    width: 50%;
+    min-height: inherit;
 }
 
 nav ul li {
