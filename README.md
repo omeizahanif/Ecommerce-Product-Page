@@ -36,12 +36,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot desktop.png)
+![Screenshot for the solution to the E-commerce product page coding challenge](./images/screenshot-desktop.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Ecommerce Product Page](https://omeizahanif.github.io/Ecommerce-Product-Page/)
+
 
 ## My process
 
