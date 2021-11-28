@@ -104,6 +104,7 @@ nav ul li a:focus {
 }
 
 .cart-info {
+    display: none;
     position: absolute;
     background-color: var(--white);
     width: 26.25rem;
@@ -119,6 +120,24 @@ nav ul li a:focus {
 .cart-info .title {
     margin: 0;
     padding: 1rem;
+}
+
+.cart-info .hide {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.amount {
+    background-color: var(--orange);
+    padding: .25em .8em;
+    border-radius: 10px;
+    font-size: .5rem;
+    position: absolute;
+    left: 10px;
+    top: 28px;
+    color: var(--white);
+    display: none;
 }
 
 .cart-items {
@@ -139,6 +158,11 @@ nav ul li a:focus {
 
 .cart-items svg {
     margin-top: 1em;
+}
+
+.empty {
+    text-align: center;
+    color: var(--dark-grayish-blue);
 }
 
 .item-info {
