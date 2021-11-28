@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot for the solution to the E-commerce product page coding challenge](./images/screenshot-desktop.png)
+![Screenshot for the solution to the E-commerce product page coding challenge](./images/screenshot%20desktop.png)
 
 ### Links
 
