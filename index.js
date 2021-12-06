@@ -5,6 +5,7 @@ const body = document.querySelector("body");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const slides = document.querySelectorAll(".slides");
+const lightbox = document.getElementById("lightbox");
 const lightboxSlides = document.querySelectorAll(".lightbox-slides");
 const slideNavigation = document.querySelectorAll(".slide-navigation img");
 const lightboxNavigation = document.querySelectorAll(".lightbox-navigation img");
@@ -37,6 +38,8 @@ closeNav.addEventListener("click", function(e) {
         nav.style.display = "none";    
         document.body.style.backgroundColor = "white";
 });
+
+lightbox.addEventListener("click", closeLightbox);
 
 cartBtn.addEventListener("click", function(e) {
     cartDisplay.style.display = "block";
